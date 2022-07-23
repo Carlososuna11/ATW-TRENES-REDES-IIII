@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname R0
+interface fa0/0
+ip address 192.93.193.161 255.255.255.240
+no shutdown
+exit
+interface fa0/1
+ip address 192.93.194.41 255.255.255.248
+no shutdown
+exit
+interface se0/1/0
+ip address 192.93.194.49 255.255.255.248
+no shutdown
+exit
+exit
+wr

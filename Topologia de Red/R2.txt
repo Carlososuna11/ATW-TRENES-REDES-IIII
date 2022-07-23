@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname R2
+interface fa1/0
+ip address 192.93.194.86 255.255.255.252
+no shutdown
+exit
+interface se0/0
+ip address 192.93.194.89 255.255.255.252
+no shutdown
+clock rate 56000
+exit
+interface se0/2
+ip address 192.93.194.97 255.255.255.252
+no shutdown
+clock rate 56000
+exit
+interface fa0/0
+ip address 192.93.194.93 255.255.255.252
+no shutdown
+exit
+exit
+wr

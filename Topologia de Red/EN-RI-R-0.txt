@@ -1,0 +1,13 @@
+enable
+configure terminal
+hostname EN-RI-R-0
+interface fa1/0
+ip address 192.93.194.130 255.255.255.252
+no shutdown
+exit
+interface fa0/0
+ip address 192.93.193.1 255.255.255.128
+no shutdown
+exit
+exit
+wr

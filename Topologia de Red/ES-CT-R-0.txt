@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname ES-CT-R-0
+interface fa1/0
+ip address 192.93.193.129 255.255.255.240
+no shutdown
+exit
+interface fa0/0
+ip address 192.93.193.225 255.255.255.240
+no shutdown
+exit
+interface se0/3/0
+ip address 192.93.194.122 255.255.255.252
+no shutdown
+exit
+exit
+wr

@@ -1,0 +1,21 @@
+enable
+configure terminal
+hostname EC-CT-R-0
+interface fa1/0
+ip address 192.93.194.33 255.255.255.248
+no shutdown
+exit
+interface fa0/1
+ip address 192.93.194.17 255.255.255.240
+no shutdown
+exit
+interface fa0/0
+ip address 192.93.193.193 255.255.255.240
+no shutdown
+exit
+interface se0/3/0
+ip address 192.93.194.98 255.255.255.252
+no shutdown
+exit
+exit
+wr

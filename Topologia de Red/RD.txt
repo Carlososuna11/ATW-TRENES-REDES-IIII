@@ -1,0 +1,13 @@
+enable
+configure terminal
+hostname RD
+interface fa0/1
+ip address 192.93.194.110 255.255.255.252
+no shutdown
+exit
+interface fa0/0
+ip address 192.93.194.113 255.255.255.252
+no shutdown
+exit
+exit
+wr
