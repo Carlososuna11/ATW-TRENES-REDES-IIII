@@ -1,0 +1,35 @@
+Router1
+!
+en
+conf ter
+router ospf 23 
+network 192.93.194.80 0.0.0.3 area 0
+network 192.93.194.48 0.0.0.7 area 0
+exit   
+exit
+wr
+!
+Router0
+!
+en 
+conf ter
+router ospf 23
+network 192.93.194.160 0.0.0.15 area 0
+network 192.93.194.40 0.0.0.7 area 0
+network 192.93.194.48 0.0.0.7 area 0
+exit
+exit
+wr
+!
+Router3
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.48 0.0.0.7 area 0
+network 192.93.194.84 0.0.0.7 area 0
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.194.124 0.0.0.3 area 0
+exit
+exit
+wr

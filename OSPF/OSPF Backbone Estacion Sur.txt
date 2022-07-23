@@ -1,0 +1,59 @@
+Router4
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.194.104 0.0.0.3 area 0
+network 192.93.194.108 0.0.0.3 area 0
+network 192.93.194.116 0.0.0.3 area 0
+network 192.93.194.120 0.0.0.3 area 0
+exit
+exit
+wr
+!
+ES-RI-R-0
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.192.128 0.0.0.127 area 0
+exit
+exit
+wr
+!
+Router RD
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.194.112 0.0.0.3 area 0
+exit
+exit
+wr
+!
+ES-CT-R-0
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.193.128 0.0.0.15 area 0
+network 192.93.193.224 0.0.0.15 area 0
+exit
+exit
+wr
+!
+ES-RS-R-0
+!
+en
+conf ter
+router ospf 23
+network 192.93.194.100 0.0.0.3 area 0
+network 192.93.194.64 0.0.0.7 area 0
+network 192.93.193.208 0.0.0.15 area 0
+exit
+exit
+wr
