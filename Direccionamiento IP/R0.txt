@@ -12,6 +12,7 @@ exit
 interface se0/1/0
 ip address 192.93.194.49 255.255.255.248
 no shutdown
+encapsulation frame-relay
 exit
 exit
 wr

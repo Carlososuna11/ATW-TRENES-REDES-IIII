@@ -1,0 +1,71 @@
+------R0-------------
+
+enable
+config t
+interface serial 0/1/0
+encapsulation frame-relay
+frame-relay interface-dlci 101
+frame-relay interface-dlci 102
+exit
+exit
+wr
+
+
+------R3-------------
+
+enable
+config t
+interface serial 3/0
+encapsulation frame-relay
+frame-relay interface-dlci 301
+frame-relay interface-dlci 302
+exit
+exit
+wr
+
+
+------R1-------------
+
+enable
+config t
+interface serial 0/0
+encapsulation frame-relay
+frame-relay interface-dlci 201
+frame-relay interface-dlci 202
+exit
+exit
+wr
+
+
+---Configuracion Extra----
+
+------R0-------------
+
+enable
+config t
+interface serial 0/1/0
+ip ospf network broadcast
+exit
+exit
+wr
+
+------R3-------------
+
+enable
+config t
+interface serial 3/0
+ip ospf network broadcast
+exit
+exit
+wr
+
+
+------R1-------------
+
+enable
+config t
+interface serial 0/0
+ip ospf network broadcast
+exit
+exit
+wr

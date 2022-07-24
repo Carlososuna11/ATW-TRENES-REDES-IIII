@@ -8,6 +8,7 @@ exit
 interface se3/0
 ip address 192.93.194.51 255.255.255.248
 no shutdown
+encapsulation frame-relay
 exit
 interface fa5/0
 ip address 192.93.194.125 255.255.255.252
