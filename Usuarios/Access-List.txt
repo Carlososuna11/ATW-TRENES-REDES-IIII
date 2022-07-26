@@ -13,7 +13,7 @@ interface fastethernet 0/1
 ip access-group 1 out
 exit
 interface fastethernet 0/0
-ip access-group 1 out
+no ip access-group 1 out
 exit
 exit
 wr
@@ -92,6 +92,10 @@ access-list 1 deny 192.93.192.0 0.0.0.127
 access-list 1 deny 192.93.193.0 0.0.0.127
 access-list 1 deny 192.93.192.128 0.0.0.127
 access-list 1 permit any
+interface fa 0/0
+no ip access-group 1 out
+interface se 2/0
+no ip access-group 1 out
 interface se 3/0
 ip access-group 1 out
 exit
@@ -108,6 +112,8 @@ access-list 1 deny 192.93.192.0 0.0.0.127
 access-list 1 deny 192.93.193.0 0.0.0.127
 access-list 1 deny 192.93.192.128 0.0.0.127
 access-list 1 permit any
+interface fastethernet 0/1
+no ip access-group 1 out
 interface fastethernet 0/0
 ip access-group 1 out
 exit

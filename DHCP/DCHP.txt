@@ -131,8 +131,8 @@ wr
 enable
 configure terminal
 ip dhcp pool WIFISUR
-network 193.93.192.128 255.255.255.128
-default-router 193.93.192.129
+network 192.93.192.128 255.255.255.128
+default-router 192.93.192.129
 dns-server 192.93.194.114
 exit
 exit
