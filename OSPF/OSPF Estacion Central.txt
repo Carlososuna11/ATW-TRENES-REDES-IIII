@@ -16,7 +16,7 @@ EC-RS-R-0
 en
 conf ter
 router ospf 23
-network 192.93.193.160 0.0.0.15 area 2
+network 192.93.193.176 0.0.0.15 area 2
 network 192.93.194.56 0.0.0.7 area 2
 network 192.93.194.88 0.0.0.3 area 2
 exit
@@ -39,7 +39,7 @@ EC-CT-R-0
 en
 conf ter
 router ospf 23
-network 192.93.194.92 0.0.0.3 area 2
+network 192.93.194.96 0.0.0.3 area 2
 network 192.93.193.192 0.0.0.15 area 2
 network 192.93.194.16 0.0.0.15 area 2
 network 192.93.194.32 0.0.0.7 area 2

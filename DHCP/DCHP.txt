@@ -1,0 +1,139 @@
+---------------R0------------------
+
+enable
+configure terminal
+ip dhcp pool CONTROLPPAL
+network 192.93.193.160 255.255.255.240
+default-router 192.93.193.161
+dns-server 192.93.194.114
+option 150 ip 192.93.193.161
+exit
+exit
+wr
+-------------EC-CT-R-0-------------------
+enable
+configure terminal
+ip dhcp pool BOLETERIACENTRAL
+network 192.93.194.16 255.255.255.240
+default-router 192.93.194.17
+dns-server 192.93.194.114
+exit
+ip dhcp pool CLIENTECENTRAL
+network 192.93.194.32 255.255.255.248
+default-router 192.93.194.33
+dns-server 192.93.194.114
+option 150 ip 192.93.194.33
+exit
+ip dhcp pool CONTROLCENTRAL
+network 192.93.193.192 255.255.255.240
+default-router 192.93.193.193
+dns-server 192.93.194.114
+option 150 ip 192.93.193.193
+exit
+exit
+wr
+
+-------------EC-RS-R-0-------------------
+enable
+configure terminal
+ip dhcp pool SEGURIDADCENTRAL
+network 192.93.193.176 255.255.255.240
+default-router 192.93.193.177
+dns-server 192.93.194.114
+option 150 ip 192.93.193.177
+exit
+exit
+wr
+
+--------------EC-RI-R-0-------------------
+enable
+configure terminal
+ip dhcp pool WIFICENTRAL
+network 192.93.192.0 255.255.255.128
+default-router 192.93.192.1
+dns-server 192.93.194.114
+exit
+exit
+wr
+
+-------------EN-CT-R-0-------------------
+enable
+configure terminal
+ip dhcp pool CLIENTENORTE
+network 192.93.193.144 255.255.255.240
+default-router 192.93.193.145
+dns-server 192.93.194.114
+option 150 ip 192.93.193.145
+exit
+ip dhcp pool CONTROLNORTE   
+network 192.93.194.0 255.255.255.240
+default-router 192.93.194.1
+dns-server 192.93.194.114
+option 150 ip 192.93.194.1
+exit
+exit
+wr
+
+-------------EN-RS-R-0-------------------
+enable
+configure terminal
+ip dhcp pool SEGURIDADNORTE
+network 192.93.193.240 255.255.255.240
+default-router 192.93.193.241
+dns-server 192.93.194.114
+option 150 ip 192.93.193.241
+exit
+exit
+wr
+
+--------------EN-RI-R-0-------------------
+enable
+configure terminal
+ip dhcp pool WIFINORTE
+network 192.93.193.0 255.255.255.128
+default-router 192.93.193.1
+dns-server 192.93.194.114
+exit
+exit
+wr
+
+-------------ES-CT-R-0-------------------
+enable
+configure terminal
+ip dhcp pool CLIENTESUR
+network 192.93.193.128 255.255.255.240
+default-router 192.93.193.129
+dns-server 192.93.194.114
+option 150 ip 192.93.193.129
+exit
+ip dhcp pool CONTROLSUR   
+network 192.93.193.224 255.255.255.240
+default-router 192.93.193.225
+dns-server 192.93.194.114
+option 150 ip 192.93.193.225
+exit
+exit
+wr
+
+-------------ES-RS-R-0-------------------
+enable
+configure terminal
+ip dhcp pool SEGURIDADSUR
+network 192.93.193.208 255.255.255.240
+default-router 192.93.193.209
+dns-server 192.93.194.114
+option 150 ip 192.93.193.209
+exit
+exit
+wr
+
+--------------ES-RI-R-0-------------------
+enable
+configure terminal
+ip dhcp pool WIFISUR
+network 193.93.192.128 255.255.255.128
+default-router 193.93.192.129
+dns-server 192.93.194.114
+exit
+exit
+wr
