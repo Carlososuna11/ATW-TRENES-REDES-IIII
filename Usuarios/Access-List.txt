@@ -2,113 +2,114 @@
 
 enable
 config t 
-access-list 1 deny 192.93.192.0 0.0.0.255
-access-list 1 deny 192.93.193.0 0.0.0.255
-access-list 1 deny 192.93.192.128 0.0.0.255
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
 access-list 1 permit any
 interface fastethernet 0/1
-no ip access-group 1 out
-exit
-interface fastethernet 0/0
-no ip access-group 1 out
-exit
-exit
-wr
-
-----R2C-R2N-----
-
-enable
-config t 
-access-list 1 deny 192.93.192.0 0.0.0.255
-access-list 1 deny 192.93.193.0 0.0.0.255
-access-list 1 deny 192.93.192.128 0.0.0.255
-access-list 1 permit any
-
-interface serial 2/0
-no ip access-group 1 out
-
-exit
-
-interface serial 3/0
-no ip access-group 1 out
-
-exit
-exit
-wr
-
-
-enable
-config t 
-access-list 1 deny 192.93.192.0 0.0.0.255
-access-list 1 deny 192.93.193.0 0.0.0.255
-access-list 1 deny 192.93.192.128 0.0.0.255
-access-list 1 permit any
-
-interface serial 0/2
-no ip access-group 1 out
-
-exit
-
-interface serial 0/0
-no ip access-group 1 out
-
-exit
-exit
-wr
-
-
-
-----Configuracion Adicional ACCESLIST-----
-
------R2--------
-
-
-enable
-config t 
-interface fa 1/0
-no ip access-group 1 out
-exit
-exit
-wr
-
-
-
-
-----R4C-R4N-R4S----
-
-enable
-config t 
-access-list 1 deny 192.93.192.0 0.0.0.255
-access-list 1 deny 192.93.193.0 0.0.0.255
-access-list 1 deny 192.93.192.128 0.0.0.255
-access-list 1 permit any
-
-interface fastethernet 1/0
 ip access-group 1 out
-
+exit
+interface fastethernet 0/0
+ip access-group 1 out
 exit
 exit
 wr
 
-
-
-----R6C-R6N-R6S----
-
+------------R2-------------------
 enable
 config t 
-access-list 1 deny 192.93.192.0 0.0.0.255
-access-list 1 deny 192.93.193.0 0.0.0.255
-access-list 1 deny 192.93.192.128 0.0.0.255
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
 access-list 1 permit any
-
-interface fastethernet 0/0
-no ip access-group 1 out
-
+interface se 0/2
+ip access-group 1 out
 exit
+exit
+wr
 
-interface fastethernet 0/1
-no ip access-group 1 out
+---------------EC-RS-R-0-------------------
+enable
+config t 
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
+access-list 1 permit any
+interface fastethernet 0/0
+ip access-group 1 out
+exit
+exit
+wr
 
+---------------Router9-------------------
+enable
+config t 
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
+access-list 1 permit any
+interface se 3/0
+ip access-group 1 out
+exit
+exit
+wr
+
+---------------EN-RS-R-0-------------------
+enable
+config t 
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
+access-list 1 permit any
+interface fastethernet 0/0
+ip access-group 1 out
+exit
+exit
+wr
+
+-------------------Router4-------------------
+enable
+config t 
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
+access-list 1 permit any
+interface se 3/0
+ip access-group 1 out
+exit
+exit
+wr
+
+-------------------ES-RS-R-0------------------------
+enable
+config t 
+no access-list 1 deny 192.93.192.0 0.0.0.255
+no access-list 1 deny 192.93.193.0 0.0.0.255
+no access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 deny 192.93.192.0 0.0.0.127
+access-list 1 deny 192.93.193.0 0.0.0.127
+access-list 1 deny 192.93.192.128 0.0.0.127
+access-list 1 permit any
+interface fastethernet 0/0
+ip access-group 1 out
 exit
 exit
 wr
