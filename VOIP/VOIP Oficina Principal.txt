@@ -1,0 +1,35 @@
+Router0
+!
+en
+conf ter
+telephony-service
+max-dn 4
+max-ephones 4
+ip source-address 192.93.193.161 port 2000
+auto assign 1 to 4
+exit
+ephone-dn 1
+number 1001
+exit
+ephone-dn 2
+number 1002
+exit
+ephone-dn 3
+number 1003
+exit
+ephone-dn 4
+number 1004
+exit
+exit
+wr
+!
+CC-S-0
+!
+en
+conf ter
+interface range fa0/5 - 8
+switchport voice vlan 1
+exit
+exit
+wr
+!

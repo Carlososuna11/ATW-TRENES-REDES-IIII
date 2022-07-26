@@ -1,0 +1,92 @@
+EN-RS-R-0
+!
+en
+conf ter
+telephony-service
+max-dn 3
+max-ephones 3
+ip source-address 192.93.193.241 port 2000
+auto assign 1 to 3
+exit
+ephone-dn 1
+number 1031
+exit
+ephone-dn 2
+number 1032
+exit
+ephone-dn 3
+number 1033
+exit
+exit
+wr
+!
+EN-RS-S-1
+!
+en
+conf ter
+interface range fa0/4 - 6
+switchport voice vlan 1
+exit
+exit
+wr
+!
+EN-CT-R-0
+!
+en
+conf ter
+telephony-service
+max-dn 5
+max-ephones 5
+ip source-address 192.93.194.1 port 2000
+auto assign 1 to 5
+exit
+ephone-dn 1
+number 1041
+exit
+ephone-dn 2
+number 1042
+exit
+ephone-dn 3
+number 1043
+exit
+exit
+wr
+!
+EC-CT-S-0
+!
+en
+conf ter
+interface range fa0/4 - 6
+switchport voice vlan 1
+exit
+exit
+wr
+!
+EN-CT-R-0 <<<<<ATENCION LO REPITO DE NUEVO ES EL DE ARRIBA>>>>>>
+!
+en
+conf ter
+telephony-service
+max-dn 5
+max-ephones 5
+ip source-addres 192.93.193.145 port 2000
+auto assign 1 to 5
+exit
+ephone-dn 4
+number 1044
+exit
+ephone-dn 5
+number 1045
+exit
+exit
+wr
+!
+EN-CT-S-1
+!
+en
+conf ter
+interface range fa0/4 - 5
+switchport voice vlan 1
+exit
+exit
+wr
