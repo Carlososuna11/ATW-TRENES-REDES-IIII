@@ -7,10 +7,10 @@ access-list 1 deny 192.93.193.0 0.0.0.255
 access-list 1 deny 192.93.192.128 0.0.0.255
 access-list 1 permit any
 interface fastethernet 0/1
-ip access-group 1 out
+no ip access-group 1 out
 exit
 interface fastethernet 0/0
-ip access-group 1 out
+no ip access-group 1 out
 exit
 exit
 wr
@@ -25,12 +25,32 @@ access-list 1 deny 192.93.192.128 0.0.0.255
 access-list 1 permit any
 
 interface serial 2/0
-ip access-group 1 out
+no ip access-group 1 out
 
 exit
 
 interface serial 3/0
-ip access-group 1 out
+no ip access-group 1 out
+
+exit
+exit
+wr
+
+
+enable
+config t 
+access-list 1 deny 192.93.192.0 0.0.0.255
+access-list 1 deny 192.93.193.0 0.0.0.255
+access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 permit any
+
+interface serial 0/2
+no ip access-group 1 out
+
+exit
+
+interface serial 0/0
+no ip access-group 1 out
 
 exit
 exit
@@ -45,7 +65,7 @@ wr
 
 enable
 config t 
-interface fa 0/0
+interface fa 1/0
 no ip access-group 1 out
 exit
 exit
@@ -82,12 +102,12 @@ access-list 1 deny 192.93.192.128 0.0.0.255
 access-list 1 permit any
 
 interface fastethernet 0/0
-ip access-group 1 out
+no ip access-group 1 out
 
 exit
 
 interface fastethernet 0/1
-ip access-group 1 out
+no ip access-group 1 out
 
 exit
 exit
