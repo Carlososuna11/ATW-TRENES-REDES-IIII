@@ -14,7 +14,7 @@ Router0
 en 
 conf ter
 router ospf 23
-network 192.93.194.160 0.0.0.15 area 0
+network 192.93.193.160 0.0.0.15 area 0
 network 192.93.194.40 0.0.0.7 area 0
 network 192.93.194.48 0.0.0.7 area 0
 exit
