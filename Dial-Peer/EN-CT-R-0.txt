@@ -1,0 +1,28 @@
+en
+conf ter
+dial-peer voice 4 voip
+destination-pattern 1...
+session target ipv4:192.93.194.50
+exit
+dial-peer voice 9 voip
+destination-pattern 1...
+session target ipv4:192.93.194.90
+exit
+dial-peer voice 13 voip
+destination-pattern 1...
+session target ipv4:192.93.194.98
+exit
+dial-peer voice 16 voip
+destination-pattern 1...
+session target ipv4:192.93.194.134
+exit
+dial-peer voice 19 voip
+destination-pattern 1...
+session target ipv4:192.93.194.118
+exit
+dial-peer voice 20 voip
+destination-pattern 1...
+session target ipv4:192.93.194.122
+exit
+exit
+wr
