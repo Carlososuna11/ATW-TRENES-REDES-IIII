@@ -1,0 +1,94 @@
+-----R0------
+
+enable
+config t 
+access-list 1 deny 192.93.192.0 0.0.0.255
+access-list 1 deny 192.93.193.0 0.0.0.255
+access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 permit any
+interface fastethernet 0/1
+ip access-group 1 out
+exit
+interface fastethernet 0/0
+ip access-group 1 out
+exit
+exit
+wr
+
+----R2C-R2N-----
+
+enable
+config t 
+access-list 1 deny 192.93.192.0 0.0.0.255
+access-list 1 deny 192.93.193.0 0.0.0.255
+access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 permit any
+
+interface serial 0/0
+ip access-group 1 out
+
+exit
+
+interface serial 0/1
+ip access-group 1 out
+
+exit
+exit
+wr
+
+
+
+----Configuracion Adicional ACCESLIST-----
+
+-----R2--------
+
+
+enable
+config t 
+interface serial 0/1
+no ip access-group 1 out
+exit
+exit
+wr
+
+
+
+
+----R4C-R4N-R4S----
+
+enable
+config t 
+access-list 1 deny 192.93.192.0 0.0.0.255
+access-list 1 deny 192.93.193.0 0.0.0.255
+access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 permit any
+
+interface fastethernet 0/0
+ip access-group 1 out
+
+exit
+exit
+wr
+
+
+
+----R6C-R6N-R6S----
+
+enable
+config t 
+access-list 1 deny 192.93.192.0 0.0.0.255
+access-list 1 deny 192.93.193.0 0.0.0.255
+access-list 1 deny 192.93.192.128 0.0.0.255
+access-list 1 permit any
+
+interface fastethernet 0/0
+ip access-group 1 out
+
+exit
+
+interface fastethernet 0/1
+ip access-group 1 out
+
+exit
+exit
+wr
